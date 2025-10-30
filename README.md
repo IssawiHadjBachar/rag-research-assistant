@@ -7,12 +7,12 @@ You can **upload PDFs** or **search arXiv**, and the system will build a semanti
 
 ## 🚀 Features
 
-✅ Upload and process multiple PDFs 
-✅ Search and summarize academic papers from **arXiv** 
-✅ Semantic text chunking and embedding via **SentenceTransformers** 
-✅ Persistent vector database using **ChromaDB** 
-✅ Context-aware question answering powered by **Gemini 1.5** 
-✅ Easy-to-use web interface built with **Streamlit** 
+- ✅ Upload and process multiple PDFs 
+- ✅ Search and summarize academic papers from **arXiv** 
+- ✅ Semantic text chunking and embedding via **SentenceTransformers** 
+- ✅ Persistent vector database using **ChromaDB** 
+- ✅ Context-aware question answering powered by **Gemini 1.5** 
+- ✅ Easy-to-use web interface built with **Streamlit** 
 
 ---
 
@@ -82,7 +82,20 @@ HUGGINGFACE_TOKEN=""
 * [Hugging Face](https://huggingface.co/settings/tokens)
 
 ---
+## ⚙️ How It Works
+1- PDF/ArXiv Input → Extracts or fetches text.
 
+2- Text Chunking → Uses RecursiveCharacterTextSplitter to create semantically meaningful chunks.
+
+3- Embedding Generation → Each chunk is converted into a vector using all-MiniLM-L6-v2 (SentenceTransformers).
+
+4- Vector Storage → Embeddings are saved into a persistent ChromaDB collection (knowledge_base).
+
+5- Query → User asks a question. The query is embedded and matched to the most relevant text chunks.
+
+6- Response Generation → The top results are passed as context to Gemini 1.5 to generate a structured and relevant answer.
+
+---
 ## 🧪 Usage
 
 Run the app with Streamlit:
