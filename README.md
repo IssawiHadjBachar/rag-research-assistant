@@ -1,5 +1,4 @@
-
-²# 🧠 RAG-Powered Research Paper Assistant
+# 🧠 RAG-Powered Research Paper Assistant
 
 An intelligent **Retrieval-Augmented Generation (RAG)** assistant that helps you **analyze and query research papers**.
 You can **upload PDFs** or **search arXiv**, and the system will build a semantic knowledge base using **SentenceTransformers** and **ChromaDB**, then answer your questions using **Google Gemini 1.5** through **LiteLLM**.
@@ -8,12 +7,12 @@ You can **upload PDFs** or **search arXiv**, and the system will build a semanti
 
 ## 🚀 Features
 
-✅ Upload and process multiple PDFs
-✅ Search and summarize academic papers from **arXiv**
-✅ Semantic text chunking and embedding via **SentenceTransformers**
-✅ Persistent vector database using **ChromaDB**
-✅ Context-aware question answering powered by **Gemini 1.5**
-✅ Easy-to-use web interface built with **Streamlit**
+✅ Upload and process multiple PDFs 
+✅ Search and summarize academic papers from **arXiv** 
+✅ Semantic text chunking and embedding via **SentenceTransformers** 
+✅ Persistent vector database using **ChromaDB** 
+✅ Context-aware question answering powered by **Gemini 1.5** 
+✅ Easy-to-use web interface built with **Streamlit** 
 
 ---
 
