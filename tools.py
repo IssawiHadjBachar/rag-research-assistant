@@ -13,6 +13,7 @@ client = chromadb.PersistentClient(path="chroma_db")
 text_embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 arxiv_tool = ArxivQueryRun()
 
+
 load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 
@@ -70,3 +71,4 @@ def generate_response(query, context):
         api_key=gemini_api_key
     )
     return response['choices'][0]['message']['content']
+
