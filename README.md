@@ -73,13 +73,11 @@ Create a `.env` file in the root directory with the following content:
 
 ```
 GEMINI_API_KEY="" 
-HUGGINGFACE_TOKEN=""
 ```
 
 **Where to get the keys:**
 
 * [Google AI Studio](https://aistudio.google.com/api-keys)
-* [Hugging Face](https://huggingface.co/settings/tokens)
 
 ---
 ## ⚙️ How It Works
