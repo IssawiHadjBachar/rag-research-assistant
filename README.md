@@ -7,12 +7,12 @@ You can **upload PDFs** or **search arXiv**, and the system will build a semanti
 
 ## 🚀 Features
 
-- ✅ Upload and process multiple PDFs 
-- ✅ Search and summarize academic papers from **arXiv** 
-- ✅ Semantic text chunking and embedding via **SentenceTransformers** 
-- ✅ Persistent vector database using **ChromaDB** 
-- ✅ Context-aware question answering powered by **Gemini 1.5** 
-- ✅ Easy-to-use web interface built with **Streamlit** 
+* ✅ Upload and process multiple PDFs
+* ✅ Search and summarize academic papers from **arXiv**
+* ✅ Semantic text chunking and embedding via **SentenceTransformers**
+* ✅ Persistent vector database using **ChromaDB**
+* ✅ Context-aware question answering powered by **Gemini 1.5**
+* ✅ Easy-to-use web interface built with **Streamlit**
 
 ---
 
@@ -20,7 +20,8 @@ You can **upload PDFs** or **search arXiv**, and the system will build a semanti
 
 ```
 📦 rag-research-assistant
- ┣ 📜 app.py                  # Main Streamlit application
+ ┣ 📜 main.py                 # Main Streamlit application
+ ┣ 📜 tools.py                # Utility functions for PDF processing, embeddings, and search
  ┣ 📜 requirements.txt        # Python dependencies
  ┣ 📜 .env                    # API keys 
  ┗ 📂 chroma_db               # Local persistent ChromaDB folder
@@ -59,7 +60,7 @@ venv\Scripts\activate
 
 ### 3️⃣ Install Dependencies
 
-Make sure you have **Python 3.10+** installed, then run:
+Ensure you have **Python 3.10+** installed, then run:
 
 ```bash
 pip install -r requirements.txt
@@ -72,28 +73,31 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory with the following content:
 
 ```
-GEMINI_API_KEY="" 
+GEMINI_API_KEY=""
 ```
 
-**Where to get the keys:**
+**Where to get the key:**
 
 * [Google AI Studio](https://aistudio.google.com/api-keys)
 
 ---
+
 ## ⚙️ How It Works
-1- PDF/ArXiv Input → Extracts or fetches text.
 
-2- Text Chunking → Uses RecursiveCharacterTextSplitter to create semantically meaningful chunks.
+1️⃣ **PDF / arXiv Input** → Extracts text from uploaded PDFs or fetches papers from arXiv.
 
-3- Embedding Generation → Each chunk is converted into a vector using all-MiniLM-L6-v2 (SentenceTransformers).
+2️⃣ **Text Chunking** → Uses `RecursiveCharacterTextSplitter` to create semantically meaningful chunks.
 
-4- Vector Storage → Embeddings are saved into a persistent ChromaDB collection (knowledge_base).
+3️⃣ **Embedding Generation** → Each chunk is converted into a vector using `all-MiniLM-L6-v2` (SentenceTransformers).
 
-5- Query → User asks a question. The query is embedded and matched to the most relevant text chunks.
+4️⃣ **Vector Storage** → Embeddings are saved into a persistent ChromaDB collection (`knowledge_base`).
 
-6- Response Generation → The top results are passed as context to Gemini 1.5 to generate a structured and relevant answer.
+5️⃣ **Query** → User asks a question. The query is embedded and matched to the most relevant text chunks.
+
+6️⃣ **Response Generation** → The top results are passed as context to Gemini 1.5 to generate a structured and relevant answer.
 
 ---
+
 ## 🧪 Usage
 
 Run the app with Streamlit:
@@ -102,5 +106,3 @@ Run the app with Streamlit:
 streamlit run main.py
 ```
 
-
----
