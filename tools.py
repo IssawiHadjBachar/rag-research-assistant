@@ -51,7 +51,6 @@ def process_text_and_store(all_text):
     return collection
 
 
-# ------------------- Semantic Search -------------------
 
 def semantic_search(query, collection, top_k=2):
     query_embedding = text_embedding_model.encode(query)
@@ -71,4 +70,5 @@ def generate_response(query, context):
         api_key=gemini_api_key
     )
     return response['choices'][0]['message']['content']
+
 
